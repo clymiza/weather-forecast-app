@@ -26,6 +26,9 @@ function useWeather(region?: string) {
 	const { data, error } = useSWR<WeatherProps>(
 		region ? generateWeatherUrl(region) : null,
 		fetcher,
+		{
+			revalidateIfStale: false,
+		},
 	);
 
 	if (error) {
