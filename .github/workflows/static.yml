@@ -15,6 +15,8 @@ permissions:
   pages: write
   id-token: write
 
+env: 
+  VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
@@ -40,8 +42,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        env: 
-          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
