@@ -13,7 +13,7 @@ const fetcher = async (url: string) => {
  * 天気データを取得するURLを生成する関数
  */
 const generateWeatherUrl = (region: string) =>
-	`http://api.openweathermap.org/data/2.5/forecast?q=${region}&APPID=${import.meta.env.VITE_API_KEY}&units=metric&lang=ja`;
+	`https://api.openweathermap.org/data/2.5/forecast?q=${region}&APPID=${import.meta.env.VITE_API_KEY}&units=metric&lang=ja`;
 
 /**
  * 指定された地域の天気データを取得するカスタムフック
