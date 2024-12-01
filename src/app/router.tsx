@@ -21,7 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: ":region",
 				ErrorBoundary: AppRootErrorBoundary,
-				element: <div>region</div>,
+				lazy: async () => {
+					const { WeatherRoute } = await import("./routes/weather");
+					return { Component: WeatherRoute };
+				},
 			},
 		],
 	},
