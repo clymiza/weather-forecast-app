@@ -1,9 +1,7 @@
+import { AppRouter } from "@/app/router";
+
 function App() {
-	return (
-		<>
-			<h1>Vite + React</h1>
-		</>
-	);
+	return <AppRouter />;
 }
 
 export default App;
